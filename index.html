@@ -19,7 +19,19 @@
       padding: 15px 30px;
       background-color: #f8f8f8;
       border-bottom: 1px solid #ddd;
-      position: relative;
+    }
+
+    /* Logo on Top Left */
+    .top-left-logo {
+      width: 5vw;
+      height: auto;
+      border-radius: 6px;
+      margin-right: 20px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
     }
 
     .restaurant-name {
@@ -28,12 +40,10 @@
       color: red;
       font-weight: bold;
       text-align: center;
-      flex: 1;
     }
 
     .profile-menu {
       position: relative;
-      z-index: 2;
     }
 
     .profile-menu span {
@@ -66,16 +76,6 @@
       background-color: #f0f0f0;
     }
 
-    /* Logo at Top Right */
-    .top-right-logo {
-      position: absolute;
-      top: 10px;
-      right: 130px;
-      width: 60px;
-      height: auto;
-      border-radius: 6px;
-    }
-
     /* Food Images Styling */
     .food-images {
       display: flex;
@@ -86,8 +86,8 @@
     }
 
     .food-images img {
-      width: 192px;  /* 80% of 240px */
-      height: 128px; /* 80% of 160px */
+      width: 192px;
+      height: 128px;
       object-fit: cover;
       border-radius: 8px;
       border: 1px solid #ddd;
@@ -107,7 +107,6 @@
       padding: 30px 60px;
     }
 
-    /* Menu Sections */
     .menu-section {
       flex: 1;
       min-width: 280px;
@@ -145,16 +144,13 @@
 </head>
 <body>
   <header>
-    <!-- Logo on Top Right -->
-    <img class="top-left-logo" src="https://chhouka.s3.us-east-1.amazonaws.com/logo.png" alt="Logo" />
+    <!-- Left: Logo + Name -->
+    <div class="header-left">
+      <img class="top-left-logo" src="https://chhouka.s3.us-east-1.amazonaws.com/logo-pan-fire.png" alt="Logo" />
+      <div class="restaurant-name">Chhouka Restaurant</div>
+    </div>
 
-    <!-- Spacer for layout -->
-    <div style="width: 100px;"></div>
-
-    <!-- Restaurant Name -->
-    <div class="restaurant-name">Chhouka Restaurant</div>
-
-    <!-- Profile Dropdown -->
+    <!-- Right: Profile -->
     <div class="profile-menu" id="profileMenu">
       <span>Profile ▼</span>
       <div class="dropdown-content">
@@ -174,7 +170,6 @@
 
   <!-- Menu Items -->
   <div class="menu-container">
-    <!-- Sandwich Section -->
     <div class="menu-section sandwich">
       <h2>Sandwich</h2>
       <ul>
@@ -185,7 +180,6 @@
       </ul>
     </div>
 
-    <!-- Snacks Section -->
     <div class="menu-section snacks">
       <h2>Snacks</h2>
       <ul>
