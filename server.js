@@ -33,9 +33,14 @@ db.connect(err => {
 app.post('/api/signup', async (req, res) => {
   const { name, email, password, phone, location } = req.body;
 
-  // Check if email already exists
+  console.log('[SIGNUP] Incoming:', { name, email, phone, location });
+
   db.query('SELECT * FROM users WHERE email = ?', [email], async (err, results) => {
-    if (err) return res.status(500).json({ message: 'DB error' });
+    if (err) {
+      console.error('[DB ERROR] SELECT:', err);
+      return res.status(500).json({ message: 'DB error' });
+    }
+
     if (results.length > 0) {
       return res.status(400).json({ message: 'User already exists' });
     }
@@ -47,13 +52,16 @@ app.post('/api/signup', async (req, res) => {
       [name, email, hashedPassword, phone, location],
       (err, result) => {
         if (err) {
+          console.error('[DB ERROR] INSERT:', err);
           return res.status(500).json({ message: 'Error creating user' });
         }
+        console.log('[SIGNUP] User created:', result);
         res.status(200).json({ message: 'Signup successful' });
       }
     );
   });
 });
+
 
 //Login
 app.post('/api/login', (req, res) => {
