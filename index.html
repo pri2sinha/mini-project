@@ -73,4 +73,65 @@
       padding: 20px;
     }
 
-    .food-image
+    .food-images img {
+      width: 240px;  /* Previously 150px → +60% */
+      height: 160px; /* Previously 100px → +60% */
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    h2 {
+      margin-left: 30px;
+      color: #444;
+    }
+
+    ul {
+      margin-left: 50px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Left spacer for layout balance -->
+    <div style="width: 100px;"></div>
+
+    <!-- Restaurant name in the center -->
+    <div class="restaurant-name">Chhouka Restaurant</div>
+
+    <!-- Profile on the right -->
+    <div class="profile-menu" id="profileMenu">
+      <span>Profile ▼</span>
+      <div class="dropdown-content">
+        <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Food Images (60% larger) -->
+  <div class="food-images">
+    <img src="https://chhouka.s3.us-east-1.amazonaws.com/snacks.png" alt="Snacks" />
+    <img src="https://chhouka.s3.us-east-1.amazonaws.com/sandwich.png" alt="Sandwich" />
+  </div>
+
+  <h2>Snacks</h2>
+  <ul>
+    <li>Samosa</li>
+    <li>Pakora</li>
+    <li>Paneer Tikka</li>
+    <li>Spring Rolls (Veg)</li>
+  </ul>
+
+  <h2>Sandwich</h2>
+  <ul>
+    <li>Grilled Veg Sandwich</li>
+    <li>Cheese & Tomato Sandwich</li>
+    <li>Paneer Sandwich</li>
+    <li>Mint & Coriander Sandwich</li>
+  </ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
