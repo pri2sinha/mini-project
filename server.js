@@ -14,10 +14,10 @@ app.use(express.static('public')); // to serve HTML/CSS/JS
 
 // 🔐 Replace with your actual AWS MySQL details
 const db = mysql.createConnection({
-  host: 'your-aws-endpoint',     // e.g., abc123.rds.amazonaws.com
-  user: 'your-username',
-  password: 'your-password',
-  database: 'your-database-name',
+  host: 'database-1.cqz6c4k8mi6p.us-east-1.rds.amazonaws.com',     // e.g., abc123.rds.amazonaws.com
+  user: 'admin',
+  password: 'password',
+  database: 'mini_project',
 });
 
 // 🔄 Connect to the DB
