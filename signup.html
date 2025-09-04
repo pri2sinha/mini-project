@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Signup - Chhouka Restaurant</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Signup</h1>
-    <a href="index.html" class="back-link">← Back to Menu</a>
-  </header>
+<form id="signupForm">
+  <input type="text" placeholder="Full Name" id="signupName" required />
+  <input type="email" placeholder="Email" id="signupEmail" required />
+  <input type="password" placeholder="Password" id="signupPassword" required />
+  <input type="tel" placeholder="Phone Number" id="signupPhone" required />
+  <input type="text" placeholder="Location" id="signupLocation" required />
+  <input type="submit" value="Signup" />
+</form>
 
-  <div class="form-section">
-    <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <input type="tel" placeholder="Phone Number" required />
-      <input type="text" placeholder="Location" required />
-      <input type="submit" value="Signup" />
-    </form>
-  </div>
-</body>
-</html>
+<script>
+  document.getElementById("signupForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("signupName").value;
+    const email = document.getElementById("signupEmail").value;
+    const password = document.getElementById("signupPassword").value;
+    const phone = document.getElementById("signupPhone").value;
+    const location = document.getElementById("signupLocation").value;
+
+    const res = await fetch("/api/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, password, phone, location }),
+    });
+
+    const data = await res.json();
+    alert(data.message);
+    if (res.status === 200) {
+      window.location.href = "login.html"; // redirect to login
+    }
+  });
+</script>
