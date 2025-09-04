@@ -1,35 +1,32 @@
-/* Reset & basics */
+/* ===== Reset & Base ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0faf0;
+  background-color: #f4fff4;
   color: #2e4d22;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  padding: 20px;
 }
 
+/* ===== Header & Profile Dropdown ===== */
 header {
   background: #3b7a3b;
-  padding: 20px;
   color: white;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  border-radius: 5px;
 }
 
 header h1 {
-  font-weight: 700;
   font-size: 1.8rem;
-  letter-spacing: 2px;
 }
 
-/* Profile dropdown */
 .profile-menu {
   position: relative;
   cursor: pointer;
@@ -37,11 +34,10 @@ header h1 {
 }
 
 .profile-menu > span {
-  padding: 10px 15px;
   background: #2e662e;
+  padding: 10px 15px;
   border-radius: 5px;
   display: inline-block;
-  transition: background-color 0.3s ease;
 }
 
 .profile-menu:hover > span {
@@ -50,14 +46,14 @@ header h1 {
 
 .dropdown-content {
   position: absolute;
-  top: 45px;
+  top: 50px;
   right: 0;
   background: white;
-  box-shadow: 0 3px 7px rgba(0,0,0,0.15);
-  border-radius: 6px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
   width: 160px;
   display: none;
-  z-index: 10;
+  z-index: 999;
 }
 
 .dropdown-content button {
@@ -72,84 +68,66 @@ header h1 {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
-.dropdown-content button:last-child {
-  border-bottom: none;
-}
+
 .dropdown-content button:hover {
-  background: #e1f0e1;
+  background-color: #e1f0e1;
 }
 
-/* Show dropdown */
 .profile-menu.active .dropdown-content {
   display: block;
 }
 
-/* Container for forms */
-.container {
-  max-width: 450px;
-  margin: 40px auto;
-  background: white;
-  border-radius: 8px;
-  padding: 30px 35px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-
+/* ===== Menu Sections ===== */
 h2 {
-  text-align: center;
-  margin-bottom: 25px;
+  margin-top: 40px;
+  margin-bottom: 10px;
   color: #2e662e;
-  letter-spacing: 1.5px;
+  border-bottom: 2px solid #3b7a3b;
+  padding-bottom: 6px;
 }
 
-form label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #2e4d22;
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 30px;
 }
 
-form input {
-  width: 100%;
-  padding: 10px 12px;
-  margin-bottom: 18px;
-  border: 1.5px solid #7db87d;
-  border-radius: 5px;
-  font-size: 1rem;
-  outline-color: #3b7a3b;
-  transition: border-color 0.3s ease;
+ul li {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
 }
 
-form input:focus {
-  border-color: #3b7a3b;
-}
-
-form input[type="submit"] {
-  background-color: #3b7a3b;
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-form input[type="submit"]:hover {
-  background-color: #2e662e;
-}
-
-/* Hide forms by default */
+/* ===== Forms ===== */
 .form-section {
   display: none;
+  margin-top: 30px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Show active form */
-.form-section.active {
+.form-section h3 {
+  margin-bottom: 15px;
+  color: #2e662e;
+}
+
+.form-section input {
   display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-  .container {
-    margin: 20px;
-    padding: 25px 20px;
-  }
+.form-section input[type="submit"] {
+  background-color: #3b7a3b;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-section input[type="submit"]:hover {
+  background-color: #2e662e;
 }
