@@ -23,7 +23,7 @@
 
     .restaurant-name {
       font-family: 'Great Vibes', cursive;
-      font-size: 42px; /* Increased slightly for bold effect */
+      font-size: 56px; /* Increased font size */
       color: red;
       font-weight: bold;
       text-align: center;
@@ -64,7 +64,7 @@
       background-color: #f0f0f0;
     }
 
-    /* Food Images - Now 60% Larger */
+    /* Equal Size Food Images */
     .food-images {
       display: flex;
       justify-content: center;
@@ -74,8 +74,8 @@
     }
 
     .food-images img {
-      width: 240px;  /* Previously 150px → +60% */
-      height: 160px; /* Previously 100px → +60% */
+      width: 240px;
+      height: 160px;
       object-fit: cover;
       border-radius: 8px;
       border: 1px solid #ddd;
@@ -94,13 +94,8 @@
 </head>
 <body>
   <header>
-    <!-- Left spacer for layout balance -->
     <div style="width: 100px;"></div>
-
-    <!-- Restaurant name in the center -->
     <div class="restaurant-name">Chhouka Restaurant</div>
-
-    <!-- Profile on the right -->
     <div class="profile-menu" id="profileMenu">
       <span>Profile ▼</span>
       <div class="dropdown-content">
@@ -110,10 +105,11 @@
     </div>
   </header>
 
-  <!-- Food Images (60% larger) -->
   <div class="food-images">
     <img src="https://chhouka.s3.us-east-1.amazonaws.com/snacks.png" alt="Snacks" />
     <img src="https://chhouka.s3.us-east-1.amazonaws.com/sandwich.png" alt="Sandwich" />
+    <img src="https://chhouka.s3.us-east-1.amazonaws.com/paneer.png" alt="Paneer" />
+    <img src="https://chhouka.s3.us-east-1.amazonaws.com/noodles.png" alt="Noodles" />
   </div>
 
   <h2>Snacks</h2>
