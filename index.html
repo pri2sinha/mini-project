@@ -14,41 +14,40 @@
     /* Header Styling */
     header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
+      justify-content: space-between;
+      padding: 10px 30px;
       background-color: #f8f8f8;
       border-bottom: 1px solid #ddd;
+      position: relative;
     }
 
-    /* Logo on Top Left */
+    /* Logo Left - 25% */
     .top-left-logo {
-      width: 5vw;
+      width: 25vw;
       height: auto;
       border-radius: 6px;
-      margin-right: 20px;
     }
 
-    .header-left {
-      display: flex;
-      align-items: center;
-    }
-
+    /* Centered restaurant name */
     .restaurant-name {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       font-family: 'Great Vibes', cursive;
       font-size: 56px;
       color: red;
       font-weight: bold;
-      text-align: center;
+      white-space: nowrap;
     }
 
     .profile-menu {
       position: relative;
+      font-weight: bold;
     }
 
     .profile-menu span {
       cursor: pointer;
-      font-weight: bold;
     }
 
     .dropdown-content {
@@ -144,11 +143,11 @@
 </head>
 <body>
   <header>
-    <!-- Left: Logo + Name -->
-    <div class="header-left">
-      <img class="top-left-logo" src="https://chhouka.s3.us-east-1.amazonaws.com/logo-pan-fire.png" alt="Logo" />
-      <div class="restaurant-name">Chhouka Restaurant</div>
-    </div>
+    <!-- Left: Logo -->
+    <img class="top-left-logo" src="https://chhouka.s3.us-east-1.amazonaws.com/logo-pan-fire.png" alt="Logo" />
+
+    <!-- Center: Restaurant Name -->
+    <div class="restaurant-name">Chhouka Restaurant</div>
 
     <!-- Right: Profile -->
     <div class="profile-menu" id="profileMenu">
@@ -168,7 +167,7 @@
     <img src="https://chhouka.s3.us-east-1.amazonaws.com/noodles.png" alt="Noodles" />
   </div>
 
-  <!-- Menu Items -->
+  <!-- Menu Sections -->
   <div class="menu-container">
     <div class="menu-section sandwich">
       <h2>Sandwich</h2>
