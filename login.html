@@ -1,22 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Login - Chhouka Restaurant</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Login</h1>
-    <a href="index.html" class="back-link">← Back to Menu</a>
-  </header>
+<form id="loginForm">
+  <input type="email" placeholder="Email" id="loginEmail" required />
+  <input type="password" placeholder="Password" id="loginPassword" required />
+  <input type="submit" value="Login" />
+</form>
 
-  <div class="form-section">
-    <form>
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <input type="submit" value="Login" />
-    </form>
-  </div>
-</body>
-</html>
+<script>
+  document.getElementById("loginForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+
+    const res = await fetch("/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await res.json();
+    alert(data.message);
+    if (res.status === 200) {
+      window.location.href = "index.html"; // redirect to home
+    }
+  });
+</script>
