@@ -23,7 +23,7 @@
 
     .restaurant-name {
       font-family: 'Great Vibes', cursive;
-      font-size: 56px; /* Increased font size */
+      font-size: 56px;
       color: red;
       font-weight: bold;
       text-align: center;
@@ -64,7 +64,7 @@
       background-color: #f0f0f0;
     }
 
-    /* Equal Size Food Images */
+    /* Food Images - Scaled to 75% */
     .food-images {
       display: flex;
       justify-content: center;
@@ -74,20 +74,26 @@
     }
 
     .food-images img {
-      width: 240px;
-      height: 160px;
+      width: 180px;  /* 75% of 240px */
+      height: 120px; /* 75% of 160px */
       object-fit: cover;
       border-radius: 8px;
       border: 1px solid #ddd;
     }
 
-    h2 {
-      margin-left: 30px;
+    /* Center the menu section */
+    .menu-section {
+      text-align: center;
+    }
+
+    .menu-section h2 {
       color: #444;
     }
 
-    ul {
-      margin-left: 50px;
+    .menu-section ul {
+      list-style-position: inside;
+      display: inline-block;
+      text-align: left;
       margin-bottom: 30px;
     }
   </style>
@@ -112,21 +118,23 @@
     <img src="https://chhouka.s3.us-east-1.amazonaws.com/noodles.png" alt="Noodles" />
   </div>
 
-  <h2>Snacks</h2>
-  <ul>
-    <li>Samosa</li>
-    <li>Pakora</li>
-    <li>Paneer Tikka</li>
-    <li>Spring Rolls (Veg)</li>
-  </ul>
+  <div class="menu-section">
+    <h2>Snacks</h2>
+    <ul>
+      <li>Samosa</li>
+      <li>Pakora</li>
+      <li>Paneer Tikka</li>
+      <li>Spring Rolls (Veg)</li>
+    </ul>
 
-  <h2>Sandwich</h2>
-  <ul>
-    <li>Grilled Veg Sandwich</li>
-    <li>Cheese & Tomato Sandwich</li>
-    <li>Paneer Sandwich</li>
-    <li>Mint & Coriander Sandwich</li>
-  </ul>
+    <h2>Sandwich</h2>
+    <ul>
+      <li>Grilled Veg Sandwich</li>
+      <li>Cheese & Tomato Sandwich</li>
+      <li>Paneer Sandwich</li>
+      <li>Mint & Coriander Sandwich</li>
+    </ul>
+  </div>
 
   <script src="script.js"></script>
 </body>
