@@ -1,75 +1,70 @@
-/* ===== Reset & Base ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
   background-color: #f4fff4;
   color: #2e4d22;
   padding: 20px;
 }
 
-/* ===== Header & Profile Dropdown ===== */
+/* Header & Dropdown */
 header {
   background: #3b7a3b;
   color: white;
   padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 5px;
 }
 
 header h1 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+}
+
+.back-link {
+  color: #fff;
+  text-decoration: none;
+  background: #2e662e;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.back-link:hover {
+  background-color: #1f441f;
 }
 
 .profile-menu {
   position: relative;
   cursor: pointer;
-  user-select: none;
 }
 
 .profile-menu > span {
   background: #2e662e;
   padding: 10px 15px;
   border-radius: 5px;
-  display: inline-block;
-}
-
-.profile-menu:hover > span {
-  background: #1f441f;
 }
 
 .dropdown-content {
   position: absolute;
-  top: 50px;
+  top: 45px;
   right: 0;
   background: white;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  width: 160px;
   display: none;
+  width: 160px;
   z-index: 999;
 }
 
-.dropdown-content button {
-  width: 100%;
+.dropdown-content a {
+  display: block;
   padding: 12px 15px;
-  background: white;
-  border: none;
-  border-bottom: 1px solid #eee;
-  text-align: left;
-  font-size: 1rem;
   color: #2e4d22;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
 }
 
-.dropdown-content button:hover {
+.dropdown-content a:hover {
   background-color: #e1f0e1;
 }
 
@@ -77,42 +72,33 @@ header h1 {
   display: block;
 }
 
-/* ===== Menu Sections ===== */
+/* Menu Sections */
 h2 {
-  margin-top: 40px;
-  margin-bottom: 10px;
-  color: #2e662e;
+  margin-top: 30px;
   border-bottom: 2px solid #3b7a3b;
-  padding-bottom: 6px;
+  padding-bottom: 5px;
 }
 
 ul {
-  list-style-type: disc;
   padding-left: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 ul li {
   margin-bottom: 8px;
-  font-size: 1.1rem;
 }
 
-/* ===== Forms ===== */
+/* Forms */
 .form-section {
-  display: none;
-  margin-top: 30px;
+  max-width: 400px;
+  margin: 0 auto;
+  background: white;
   padding: 20px;
-  background: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
-.form-section h3 {
-  margin-bottom: 15px;
-  color: #2e662e;
-}
-
-.form-section input {
+.form-section form input {
   display: block;
   width: 100%;
   padding: 10px;
@@ -121,13 +107,13 @@ ul li {
   border-radius: 5px;
 }
 
-.form-section input[type="submit"] {
+.form-section form input[type="submit"] {
   background-color: #3b7a3b;
   color: white;
-  font-weight: bold;
   cursor: pointer;
+  font-weight: bold;
 }
 
-.form-section input[type="submit"]:hover {
+.form-section form input[type="submit"]:hover {
   background-color: #2e662e;
 }
