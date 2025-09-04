@@ -28,3 +28,51 @@ db.connect(err => {
     console.log('✅ Connected to AWS MySQL DB');
   }
 });
+
+// SiGNUP
+app.post('/api/signup', async (req, res) => {
+  const { name, email, password, phone, location } = req.body;
+
+  // Check if email already exists
+  db.query('SELECT * FROM users WHERE email = ?', [email], async (err, results) => {
+    if (err) return res.status(500).json({ message: 'DB error' });
+    if (results.length > 0) {
+      return res.status(400).json({ message: 'User already exists' });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    db.query(
+      'INSERT INTO users (name, email, password, phone, location) VALUES (?, ?, ?, ?, ?)',
+      [name, email, hashedPassword, phone, location],
+      (err, result) => {
+        if (err) {
+          return res.status(500).json({ message: 'Error creating user' });
+        }
+        res.status(200).json({ message: 'Signup successful' });
+      }
+    );
+  });
+});
+
+//Login
+app.post('/api/login', (req, res) => {
+  const { email, password } = req.body;
+
+  db.query('SELECT * FROM users WHERE email = ?', [email], async (err, results) => {
+    if (err) return res.status(500).json({ message: 'DB error' });
+    if (results.length === 0) {
+      return res.status(400).json({ message: 'Invalid email or password' });
+    }
+
+    const user = results[0];
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(400).json({ message: 'Invalid email or password' });
+    }
+
+    res.status(200).json({ message: 'Login successful', user: { name: user.name, email: user.email } });
+  });
+});
+
