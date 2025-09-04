@@ -1,27 +1,32 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Chhouka Restaurant - Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      background-color: #fff;
     }
 
+    /* Header Styling */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
+      padding: 15px 30px;
       background-color: #f8f8f8;
       border-bottom: 1px solid #ddd;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 24px;
-      color: #333;
+    .restaurant-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 32px;
+      color: #444;
+      text-align: center;
+      flex: 1;
     }
 
     .profile-menu {
@@ -58,26 +63,43 @@
       background-color: #f0f0f0;
     }
 
-    img.banner {
-      width: 100%;
-      max-height: 300px;
+    /* Small Food Images */
+    .food-images {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .food-images img {
+      width: 150px;
+      height: 100px;
       object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #ddd;
     }
 
     h2 {
-      margin-left: 20px;
+      margin-left: 30px;
       color: #444;
     }
 
     ul {
-      margin-left: 40px;
+      margin-left: 50px;
+      margin-bottom: 30px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Chhouka Restaurant</h1>
+    <!-- Left spacer for layout balance -->
+    <div style="width: 100px;"></div>
 
+    <!-- Restaurant name in the center -->
+    <div class="restaurant-name">Chhouka Restaurant</div>
+
+    <!-- Profile on the right -->
     <div class="profile-menu" id="profileMenu">
       <span>Profile ▼</span>
       <div class="dropdown-content">
@@ -87,9 +109,12 @@
     </div>
   </header>
 
-  <!-- 👇 Food Images -->
-  <img src="https://chhouka.s3.us-east-1.amazonaws.com/snacks.png" class="banner" alt="Snacks Image" />
-  <img src="https://chhouka.s3.us-east-1.amazonaws.com/sandwich.png" class="banner" alt="Sandwich Image" />
+  <!-- Small Food Images -->
+  <div class="food-images">
+    <img src="https://chhouka.s3.us-east-1.amazonaws.com/snacks.png" alt="Snacks" />
+    <img src="https://chhouka.s3.us-east-1.amazonaws.com/sandwich.png" alt="Sandwich" />
+    <!-- Add more images here as needed -->
+  </div>
 
   <h2>Snacks</h2>
   <ul>
