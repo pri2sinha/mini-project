@@ -3,105 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Veg Food Menu</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9fef9;
-      color: #2e4d22;
-      margin: 20px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    h1 {
-      text-align: center;
-      color: #3b7a3b;
-      margin-bottom: 30px;
-    }
-    .menu-category {
-      margin-bottom: 30px;
-    }
-    .menu-category h2 {
-      border-bottom: 2px solid #3b7a3b;
-      padding-bottom: 6px;
-      margin-bottom: 15px;
-      color: #2e662e;
-      letter-spacing: 1.2px;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-    ul li {
-      margin-bottom: 8px;
-      font-size: 1.1rem;
-    }
-  </style>
+  <title>Chhouka Restaurant - Pure Veg Menu</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h1>Pure Veg Food Menu</h1>
+  <!-- ===== Header ===== -->
+  <header>
+    <h1>Chhouka Restaurant</h1>
+    <div class="profile-menu" id="profileMenu">
+      <span>Profile ▼</span>
+      <div class="dropdown-content">
+        <button id="showLoginBtn">Login</button>
+        <button id="showSignupBtn">Signup</button>
+      </div>
+    </div>
+  </header>
 
-  <div class="menu-category" id="snacks">
-    <h2>Snacks</h2>
-    <ul>
-      <li>Samosa</li>
-      <li>Pakora</li>
-      <li>Paneer Tikka</li>
-      <li>Spring Rolls (Veg)</li>
-    </ul>
+  <!-- ===== Veg Menu ===== -->
+  <h2>Snacks</h2>
+  <ul>
+    <li>Samosa</li>
+    <li>Pakora</li>
+    <li>Paneer Tikka</li>
+    <li>Spring Rolls (Veg)</li>
+  </ul>
+
+  <h2>Sandwich</h2>
+  <ul>
+    <li>Grilled Veg Sandwich</li>
+    <li>Cheese & Tomato Sandwich</li>
+    <li>Paneer Sandwich</li>
+    <li>Mint & Coriander Sandwich</li>
+  </ul>
+
+  <h2>Noodles</h2>
+  <ul>
+    <li>Veg Hakka Noodles</li>
+    <li>Chili Garlic Noodles</li>
+    <li>Manchurian Noodles</li>
+    <li>Spring Vegetable Noodles</li>
+  </ul>
+
+  <h2>Patties</h2>
+  <ul>
+    <li>Vegetable Patties</li>
+    <li>Paneer Patties</li>
+    <li>Mixed Veg Patties</li>
+    <li>Spicy Potato Patties</li>
+  </ul>
+
+  <h2>Dosa</h2>
+  <ul>
+    <li>Plain Dosa</li>
+    <li>Masala Dosa</li>
+    <li>Rava Dosa</li>
+    <li>Paneer Dosa</li>
+  </ul>
+
+  <h2>Paratha</h2>
+  <ul>
+    <li>Aloo Paratha</li>
+    <li>Gobhi Paratha</li>
+    <li>Paneer Paratha</li>
+    <li>Mix Veg Paratha</li>
+  </ul>
+
+  <!-- ===== Hidden Login / Signup Forms ===== -->
+  <div class="form-section" id="loginForm">
+    <h3>Login</h3>
+    <form>
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <input type="submit" value="Login" />
+    </form>
   </div>
 
-  <div class="menu-category" id="sandwich">
-    <h2>Sandwich</h2>
-    <ul>
-      <li>Grilled Veg Sandwich</li>
-      <li>Cheese & Tomato Sandwich</li>
-      <li>Paneer Sandwich</li>
-      <li>Mint & Coriander Sandwich</li>
-    </ul>
+  <div class="form-section" id="signupForm">
+    <h3>Signup</h3>
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <input type="text" placeholder="Location" required />
+      <input type="submit" value="Signup" />
+    </form>
   </div>
 
-  <div class="menu-category" id="noodles">
-    <h2>Noodles</h2>
-    <ul>
-      <li>Veg Hakka Noodles</li>
-      <li>Chili Garlic Noodles</li>
-      <li>Spring Vegetable Noodles</li>
-      <li>Manchurian Noodles</li>
-    </ul>
-  </div>
-
-  <div class="menu-category" id="patties">
-    <h2>Patties</h2>
-    <ul>
-      <li>Vegetable Patties</li>
-      <li>Paneer Patties</li>
-      <li>Mixed Veg Patties</li>
-      <li>Spicy Potato Patties</li>
-    </ul>
-  </div>
-
-  <div class="menu-category" id="dosa">
-    <h2>Dosa</h2>
-    <ul>
-      <li>Plain Dosa</li>
-      <li>Masala Dosa</li>
-      <li>Onion Rava Dosa</li>
-      <li>Paneer Dosa</li>
-    </ul>
-  </div>
-
-  <div class="menu-category" id="paratha">
-    <h2>Paratha</h2>
-    <ul>
-      <li>Aloo Paratha</li>
-      <li>Gobhi Paratha</li>
-      <li>Paneer Paratha</li>
-      <li>Mixed Vegetable Paratha</li>
-    </ul>
-  </div>
-
+  <!-- ===== JavaScript ===== -->
+  <script src="script.js"></script>
 </body>
 </html>
