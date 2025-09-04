@@ -11,28 +11,30 @@
       background-color: #fff;
     }
 
+    /* --- Header --- */
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 30px;
+      padding: 40px 30px 10px; /* ⬅️ More top padding */
       background-color: #f8f8f8;
       border-bottom: 1px solid #ddd;
       position: relative;
     }
 
-    .top-left-logo {
-      width: 30vw;
+    .logo {
+      width: 30%; /* ⬅️ Logo size */
+      max-width: 120px;
       height: auto;
-      border-radius: 6px;
     }
 
     .restaurant-name {
       position: absolute;
       left: 50%;
+      top: 10px; /* ⬅️ Push down to prevent clipping */
       transform: translateX(-50%);
       font-family: 'Great Vibes', cursive;
-      font-size: 64px;
+      font-size: 64px; /* ⬅️ Bigger */
       color: red;
       font-weight: bold;
       white-space: nowrap;
@@ -40,11 +42,11 @@
 
     .profile-menu {
       position: relative;
-      font-weight: bold;
     }
 
     .profile-menu span {
       cursor: pointer;
+      font-weight: bold;
     }
 
     .dropdown-content {
@@ -54,7 +56,7 @@
       background-color: white;
       border: 1px solid #ccc;
       padding: 5px 10px;
-      z-index: 3;
+      z-index: 1;
     }
 
     .profile-menu:hover .dropdown-content {
@@ -72,13 +74,13 @@
       background-color: #f0f0f0;
     }
 
+    /* --- Food Images --- */
     .food-images {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 20px;
-      padding: 20px;
-      margin-top: 40px; /* Moved images further down */
+      padding: 40px 20px 20px;
     }
 
     .food-images img {
@@ -94,58 +96,59 @@
       transform: scale(1.05);
     }
 
+    /* --- Menu Section --- */
     .menu-container {
       display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
+      justify-content: center;
+      gap: 60px;
       flex-wrap: wrap;
       padding: 30px 60px;
     }
 
     .menu-section {
       flex: 1;
-      min-width: 280px;
-      margin: 10px 20px;
+      min-width: 300px;
       background-color: #f9f9f9;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .menu-section h2 {
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
+      font-size: 28px;
       margin-bottom: 15px;
-      border-bottom: 2px solid #ddd;
+      border-bottom: 2px solid #ccc;
       padding-bottom: 5px;
+      text-align: center;
     }
 
     .menu-section.snacks h2 {
-      color: #D2691E;
+      color: #d35400;
     }
 
     .menu-section.sandwich h2 {
-      color: #2E8B57;
+      color: #2e8b57;
     }
 
     .menu-section ul {
-      list-style-type: disc;
+      list-style: disc;
       padding-left: 20px;
       font-size: 16px;
       line-height: 1.6;
     }
+
   </style>
 </head>
 <body>
-  <header>
-    <!-- Left: Logo -->
-    <img class="top-left-logo" src="https://chhouka.s3.us-east-1.amazonaws.com/logo-pan-fire.png" alt="Logo" />
 
-    <!-- Center: Restaurant Name -->
+  <header>
+    <!-- Logo -->
+    <img src="https://chhouka.s3.us-east-1.amazonaws.com/logo.png" alt="Logo" class="logo" />
+
+    <!-- Restaurant Name -->
     <div class="restaurant-name">Chhouka Restaurant</div>
 
-    <!-- Right: Profile -->
+    <!-- Profile Dropdown -->
     <div class="profile-menu" id="profileMenu">
       <span>Profile ▼</span>
       <div class="dropdown-content">
@@ -163,8 +166,9 @@
     <img src="https://chhouka.s3.us-east-1.amazonaws.com/noodles.png" alt="Noodles" />
   </div>
 
-  <!-- Menu Sections -->
+  <!-- Menu -->
   <div class="menu-container">
+    <!-- Sandwich -->
     <div class="menu-section sandwich">
       <h2>Sandwich</h2>
       <ul>
@@ -175,6 +179,7 @@
       </ul>
     </div>
 
+    <!-- Snacks -->
     <div class="menu-section snacks">
       <h2>Snacks</h2>
       <ul>
@@ -186,6 +191,5 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
 </body>
 </html>
