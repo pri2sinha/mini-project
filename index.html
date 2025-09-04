@@ -11,7 +11,6 @@
       background-color: #fff;
     }
 
-    /* Header Styling */
     header {
       display: flex;
       justify-content: space-between;
@@ -64,7 +63,6 @@
       background-color: #f0f0f0;
     }
 
-    /* Food Images - Scaled to 75% */
     .food-images {
       display: flex;
       justify-content: center;
@@ -74,27 +72,52 @@
     }
 
     .food-images img {
-      width: 180px;  /* 75% of 240px */
-      height: 120px; /* 75% of 160px */
+      width: 192px;  /* 80% of 240px */
+      height: 128px; /* 80% of 160px */
       object-fit: cover;
       border-radius: 8px;
       border: 1px solid #ddd;
+      transition: transform 0.2s;
     }
 
-    /* Center the menu section */
+    .food-images img:hover {
+      transform: scale(1.05);
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 30px 60px;
+    }
+
     .menu-section {
-      text-align: center;
+      flex: 1;
+      min-width: 280px;
+      margin: 10px 20px;
     }
 
     .menu-section h2 {
       color: #444;
+      text-align: center;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
     }
 
     .menu-section ul {
-      list-style-position: inside;
-      display: inline-block;
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .menu-section.snacks {
+      text-align: center;
+    }
+
+    .menu-section.sandwich {
       text-align: left;
-      margin-bottom: 30px;
     }
   </style>
 </head>
@@ -118,22 +141,28 @@
     <img src="https://chhouka.s3.us-east-1.amazonaws.com/noodles.png" alt="Noodles" />
   </div>
 
-  <div class="menu-section">
-    <h2>Snacks</h2>
-    <ul>
-      <li>Samosa</li>
-      <li>Pakora</li>
-      <li>Paneer Tikka</li>
-      <li>Spring Rolls (Veg)</li>
-    </ul>
+  <div class="menu-container">
+    <!-- Sandwich on the left -->
+    <div class="menu-section sandwich">
+      <h2>Sandwich</h2>
+      <ul>
+        <li>Grilled Veg Sandwich</li>
+        <li>Cheese & Tomato Sandwich</li>
+        <li>Paneer Sandwich</li>
+        <li>Mint & Coriander Sandwich</li>
+      </ul>
+    </div>
 
-    <h2>Sandwich</h2>
-    <ul>
-      <li>Grilled Veg Sandwich</li>
-      <li>Cheese & Tomato Sandwich</li>
-      <li>Paneer Sandwich</li>
-      <li>Mint & Coriander Sandwich</li>
-    </ul>
+    <!-- Snacks in the center -->
+    <div class="menu-section snacks">
+      <h2>Snacks</h2>
+      <ul>
+        <li>Samosa</li>
+        <li>Pakora</li>
+        <li>Paneer Tikka</li>
+        <li>Spring Rolls (Veg)</li>
+      </ul>
+    </div>
   </div>
 
   <script src="script.js"></script>
