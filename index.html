@@ -2,25 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chhouka Restaurant - Pure Veg Menu</title>
+  <title>Chhouka Restaurant - Menu</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- ===== Header ===== -->
   <header>
     <h1>Chhouka Restaurant</h1>
     <div class="profile-menu" id="profileMenu">
       <span>Profile ▼</span>
       <div class="dropdown-content">
-        <button id="showLoginBtn">Login</button>
-        <button id="showSignupBtn">Signup</button>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a>
       </div>
     </div>
   </header>
 
-  <!-- ===== Veg Menu ===== -->
   <h2>Snacks</h2>
   <ul>
     <li>Samosa</li>
@@ -37,61 +33,8 @@
     <li>Mint & Coriander Sandwich</li>
   </ul>
 
-  <h2>Noodles</h2>
-  <ul>
-    <li>Veg Hakka Noodles</li>
-    <li>Chili Garlic Noodles</li>
-    <li>Manchurian Noodles</li>
-    <li>Spring Vegetable Noodles</li>
-  </ul>
+  <!-- Add more categories as needed -->
 
-  <h2>Patties</h2>
-  <ul>
-    <li>Vegetable Patties</li>
-    <li>Paneer Patties</li>
-    <li>Mixed Veg Patties</li>
-    <li>Spicy Potato Patties</li>
-  </ul>
-
-  <h2>Dosa</h2>
-  <ul>
-    <li>Plain Dosa</li>
-    <li>Masala Dosa</li>
-    <li>Rava Dosa</li>
-    <li>Paneer Dosa</li>
-  </ul>
-
-  <h2>Paratha</h2>
-  <ul>
-    <li>Aloo Paratha</li>
-    <li>Gobhi Paratha</li>
-    <li>Paneer Paratha</li>
-    <li>Mix Veg Paratha</li>
-  </ul>
-
-  <!-- ===== Hidden Login / Signup Forms ===== -->
-  <div class="form-section" id="loginForm">
-    <h3>Login</h3>
-    <form>
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <input type="submit" value="Login" />
-    </form>
-  </div>
-
-  <div class="form-section" id="signupForm">
-    <h3>Signup</h3>
-    <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <input type="tel" placeholder="Phone Number" required />
-      <input type="text" placeholder="Location" required />
-      <input type="submit" value="Signup" />
-    </form>
-  </div>
-
-  <!-- ===== JavaScript ===== -->
   <script src="script.js"></script>
 </body>
 </html>
