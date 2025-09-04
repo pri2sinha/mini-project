@@ -2,36 +2,248 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fashion Store</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chhouka Restaurant - Pure Veg</title>
+  <style>
+    /* Reset & basics */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0faf0;
+      color: #2e4d22;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #3b7a3b;
+      padding: 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+    }
+
+    /* Profile dropdown */
+    .profile-menu {
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .profile-menu > span {
+      padding: 10px 15px;
+      background: #2e662e;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .profile-menu:hover > span {
+      background: #1f441f;
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 45px;
+      right: 0;
+      background: white;
+      box-shadow: 0 3px 7px rgba(0,0,0,0.15);
+      border-radius: 6px;
+      width: 160px;
+      display: none;
+      z-index: 10;
+    }
+
+    .dropdown-content button {
+      width: 100%;
+      padding: 12px 15px;
+      background: white;
+      border: none;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+      font-size: 1rem;
+      color: #2e4d22;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .dropdown-content button:last-child {
+      border-bottom: none;
+    }
+    .dropdown-content button:hover {
+      background: #e1f0e1;
+    }
+
+    /* Show dropdown */
+    .profile-menu.active .dropdown-content {
+      display: block;
+    }
+
+    /* Container for forms */
+    .container {
+      max-width: 450px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 8px;
+      padding: 30px 35px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2e662e;
+      letter-spacing: 1.5px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #2e4d22;
+    }
+
+    form input {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1.5px solid #7db87d;
+      border-radius: 5px;
+      font-size: 1rem;
+      outline-color: #3b7a3b;
+      transition: border-color 0.3s ease;
+    }
+
+    form input:focus {
+      border-color: #3b7a3b;
+    }
+
+    form input[type="submit"] {
+      background-color: #3b7a3b;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #2e662e;
+    }
+
+    /* Hide forms by default */
+    .form-section {
+      display: none;
+    }
+
+    /* Show active form */
+    .form-section.active {
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .container {
+        margin: 20px;
+        padding: 25px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Fashion Store</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="shoes.html">Shoes</a>
-      <a href="clothes.html">Clothes</a>
-    </nav>
+    <h1>Chhouka Restaurant</h1>
+    <div class="profile-menu" id="profileMenu">
+      <span>Profile ▼</span>
+      <div class="dropdown-content">
+        <button id="showLoginBtn">Login</button>
+        <button id="showSignupBtn">Signup</button>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section class="intro">
-      <h2>Welcome to Our Store</h2>
-      <p>Find the latest in shoes and clothes at unbeatable prices.</p>
+  <main class="container">
+    <!-- Login Form -->
+    <section id="loginForm" class="form-section active">
+      <h2>Login</h2>
+      <form>
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" placeholder="Enter your email" required />
+
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter your password" required />
+
+        <input type="submit" value="Login" />
+      </form>
     </section>
-    <section class="preview">
-      <h3>Our Collections</h3>
-      <div class="product-preview">
-        <a href="shoes.html"><img src="images/image12.png" alt="Shoes" /></a>
-        <a href="clothes.html"><img src="images/clothes12.png" alt="Clothes" /></a>
-      </div>
+
+    <!-- Signup Form -->
+    <section id="signupForm" class="form-section">
+      <h2>Signup</h2>
+      <form>
+        <label for="signupName">Full Name</label>
+        <input type="text" id="signupName" placeholder="Your full name" required />
+
+        <label for="signupEmail">Email</label>
+        <input type="email" id="signupEmail" placeholder="Enter your email" required />
+
+        <label for="signupPassword">Password</label>
+        <input type="password" id="signupPassword" placeholder="Create a password" required />
+
+        <label for="signupPhone">Phone Number</label>
+        <input type="tel" id="signupPhone" placeholder="Your phone number" required />
+
+        <label for="signupLocation">Location</label>
+        <input type="text" id="signupLocation" placeholder="Your location/city" required />
+
+        <input type="submit" value="Signup" />
+      </form>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Fashion Store</p>
-  </footer>
+  <script>
+    // Dropdown toggle
+    const profileMenu = document.getElementById('profileMenu');
+    profileMenu.addEventListener('click', () => {
+      profileMenu.classList.toggle('active');
+    });
+
+    // Hide dropdown if click outside
+    window.addEventListener('click', (e) => {
+      if (!profileMenu.contains(e.target)) {
+        profileMenu.classList.remove('active');
+      }
+    });
+
+    // Forms toggling
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const showLoginBtn = document.getElementById('showLoginBtn');
+    const showSignupBtn = document.getElementById('showSignupBtn');
+
+    showLoginBtn.addEventListener('click', () => {
+      loginForm.classList.add('active');
+      signupForm.classList.remove('active');
+      profileMenu.classList.remove('active');
+    });
+
+    showSignupBtn.addEventListener('click', () => {
+      signupForm.classList.add('active');
+      loginForm.classList.remove('active');
+      profileMenu.classList.remove('active');
+    });
+  </script>
 </body>
 </html>
