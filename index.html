@@ -3,15 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <title>Chhouka Restaurant - Menu</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .profile-menu {
+      position: relative;
+    }
+
+    .profile-menu span {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      z-index: 1;
+    }
+
+    .profile-menu:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      text-decoration: none;
+      display: block;
+      padding: 5px;
+      color: #333;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    img.banner {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    h2 {
+      margin-left: 20px;
+      color: #444;
+    }
+
+    ul {
+      margin-left: 40px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Chhouka Restaurant</h1>
-
-    <!-- 👇 Restaurant Image -->
-    <img src="https://chhouka.s3.us-east-1.amazonaws.com/snacks.png" style="width:100%; max-height:300px; object-fit:cover;" />
-     <img src="https://chhouka.s3.us-east-1.amazonaws.com/sandwich.png" style="width:100%; max-height:300px; object-fit:cover;" />
 
     <div class="profile-menu" id="profileMenu">
       <span>Profile ▼</span>
@@ -21,6 +86,10 @@
       </div>
     </div>
   </header>
+
+  <!-- 👇 Food Images -->
+  <img src="https://chhouka.s3.us-east-1.amazonaws.com/snacks.png" class="banner" alt="Snacks Image" />
+  <img src="https://chhouka.s3.us-east-1.amazonaws.com/sandwich.png" class="banner" alt="Sandwich Image" />
 
   <h2>Snacks</h2>
   <ul>
@@ -37,8 +106,6 @@
     <li>Paneer Sandwich</li>
     <li>Mint & Coriander Sandwich</li>
   </ul>
-
-  <!-- Add more categories as needed -->
 
   <script src="script.js"></script>
 </body>
